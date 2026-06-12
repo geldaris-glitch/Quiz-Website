@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+
+    <title>Movies</title>
+    <link rel="stylesheet" href="quiz_css/quiz.css">
+</head>
+<body>
+	
+    <div class="topbar">	
+	</div>
+	
+	<div class="underbar">
+		<a href="index.html"><-- <span class="back">Back</span></a>
+	</div>
+	
+    <div class="topnav">
+        <p>Movies <span class="whiz">Quiz</span></p>
+        <p id="intro">You are in the movies quiz. Good luck!</p>
+	
+    </div>
+	
+	<div class = "questions">
+		<div class="questionDesign">
+			<h2><span class="whiz">Q1:</span>Who is Iron Man?</h2>
+				<label>
+					<input type="radio" name="q1" value="Tony Stark">
+						<span class="whiz">a:</span>Tony Stark
+				</label><br>
+		
+				<label>
+					<input type="radio" name="q1" value="Peter Parker">
+						<span class="whiz">b:</span>Peter Parker
+					</label><br>
+			
+				<label>
+					<input type="radio" name="q1" value="Isaac Geldard">	
+						<span class="whiz">c:</span>Isaac Geldard
+				</label><br><br>
+		</div>
+		
+		<!--Question 2-->
+		
+	<div class="questionDesign">
+		<h2><span class="whiz">Q2:</span>What movie features dinosaurs in a theme park?</h2>
+		<label>
+			<input type="radio" name="q2" value="Star Wars">
+				<span class="whiz">a:</span>Star Wars
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q2" value="Indiana Jones">
+				<span class="whiz">b:</span>Indiana Jones
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q2" value="Jurassic Park">	
+				<span class="whiz">c:</span>Jurassic Park
+		</label><br><br>
+	</div>	
+		
+		<!--Question 3-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q3:</span>What is the highest grossing movie of all time?(recent years)</h2>
+		<label>
+			<input type="radio" name="q3" value="Avatar">
+				<span class="whiz">a:</span>Avatar
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q3" value="Avengers">
+				<span class="whiz">b:</span>Avengers
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q3" value="Star Wars">	
+				<span class="whiz">c:</span>Star Wars
+		</label><br><br>
+	</div>
+	
+		<!--Question 4-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q4:</span>Who is the main wizard in Harry Potter?</h2>
+		<label>
+			<input type="radio" name="q4" value="Harry Potter">
+				<span class="whiz">a:</span>Harry Potter
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q4" value="Hermione Granger">
+				<span class="whiz">b:</span>Hermione Granger
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q4" value="Neville Longbottom">	
+				<span class="whiz">c:</span>Neville Longbottom
+		</label><br><br>
+	</div>	
+		
+		<!--Question 5-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q5:</span>What movie features a talking snowman named Olaf?</h2>
+		<label>
+			<input type="radio" name="q5" value="Cold">
+				<span class="whiz">a:</span>Cold
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q5" value="Chilly">
+				<span class="whiz">b:</span>Chilly
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q5" value="Frozen">	
+				<span class="whiz">c:</span>Frozen
+		</label><br><br>
+	</div>	
+		
+		<!--Question 6-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q6:</span>What is Batmans real identity?</h2>
+		<label>
+			<input type="radio" name="q6" value="Bruce Banner">
+				<span class="whiz">a:</span>Bruce Banner
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q6" value="Bruce Wayne">
+				<span class="whiz">b:</span>Bruce Wayne
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q6" value="Tony Stark">	
+				<span class="whiz">c:</span>Tony Stark
+		</label><br><br>
+		
+		<button onclick="submitQuiz()">Submit Quiz</button>
+		
+		<p id="result"></p>
+	</div>			
+	</div>
+	
+	<script>
+function submitQuiz() {
+    console.log("Quiz submitted!");
+
+    const answers = {
+        q1: "Tony Stark",
+        q2: "Jurassic Park",
+        q3: "Avatar",
+        q4: "Harry Potter",
+        q5: "Frozen",
+        q6: "Bruce Wayne"
+    };
+
+    let score = 0;
+
+    for (let question in answers) {
+
+        const selected = document.querySelector(
+            `input[name="${question}"]:checked`
+        );
+
+        if (selected && selected.value === answers[question]) {
+            score++;
+        }
+    }
+
+    if (score >= 5) {
+        document.getElementById("result").textContent =
+            alert(`You scored ${score}/6. Good job!`);
+    } else {
+        document.getElementById("result").textContent =
+            alert(`You scored ${score}/6. Better luck next time!`);
+    }
+
+}
+
+</script>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+
+    <title>Geography</title>
+    <link rel="stylesheet" href="quiz_css/quiz.css">
+</head>
+<body>
+	
+    <div class="topbar">	
+	</div>
+	
+	<div class="underbar">
+		<a href="index.html"><-- <span class="back">Back</span></a>
+	</div>
+	
+    <div class="topnav">
+        <p>Geography <span class="whiz">Quiz</span></p>
+        <p id="intro">You are in the geography quiz. Good luck!</p>
+		
+    </div>
+	
+	<div class = "questions">
+		<div class="questionDesign">
+			<h2><span class="whiz">Q1:</span>Which is the largest ocean?</h2>
+				<label>
+					<input type="radio" name="q1" value="Pacific Ocean">
+						<span class="whiz">a:</span>Pacific Ocean
+				</label><br>
+		
+				<label>
+					<input type="radio" name="q1" value="Ocean">
+						<span class="whiz">b:</span>Ocean
+					</label><br>
+			
+				<label>
+					<input type="radio" name="q1" value="Oceanic">	
+						<span class="whiz">c:</span>Oceanic
+				</label><br><br>
+		</div>
+		
+		<!--Question 2-->
+		
+	<div class="questionDesign">
+		<h2><span class="whiz">Q2:</span>Mount Everest is in which mountain range?</h2>
+		<label>
+			<input type="radio" name="q2" value="The Mountains">
+				<span class="whiz">a:</span>The Mountains
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q2" value="The Rocky's">
+				<span class="whiz">b:</span>The Rocky's
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q2" value="Himalayas">	
+				<span class="whiz">c:</span>Himalayas
+		</label><br><br>
+	</div>	
+		
+		<!--Question 3-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q3:</span>Which country is famous for the Eiffel Tower?</h2>
+		<label>
+			<input type="radio" name="q3" value="France">
+				<span class="whiz">a:</span>France
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q3" value="Italy">
+				<span class="whiz">b:</span>Italy
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q3" value="Germany">	
+				<span class="whiz">c:</span>Germany
+		</label><br><br>
+	</div>
+	
+		<!--Question 4-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q4:</span>What is the capital of Japan?</h2>
+		<label>
+			<input type="radio" name="q4" value="Nagasaki">
+				<span class="whiz">a:</span>Nagasaki
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q4" value="Tokyo">
+				<span class="whiz">b:</span>Tokyo
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q4" value="Berlin">	
+				<span class="whiz">c:</span>Berlin
+		</label><br><br>
+	</div>	
+		
+		<!--Question 5-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q5:</span>Which continent is Egypt in?</h2>
+		<label>
+			<input type="radio" name="q5" value="Australia">
+				<span class="whiz">a:</span>Australia
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q5" value="America">
+				<span class="whiz">b:</span>America
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q5" value="Africa">	
+				<span class="whiz">c:</span>Africa
+		</label><br><br>
+	</div>	
+		
+		<!--Question 6-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q6:</span>What river runs through Egypt?</h2>
+		<label>
+			<input type="radio" name="q6" value="Amazon">
+				<span class="whiz">a:</span>Amazon
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q6" value="Nile">
+				<span class="whiz">b:</span>Nile
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q6" value="Denial">	
+				<span class="whiz">c:</span>Denial
+		</label><br><br>
+		
+		<button onclick="submitQuiz()">Submit Quiz</button>
+		
+		<p id="result"></p>
+	</div>			
+	</div>
+	
+	<script>
+function submitQuiz() {
+    console.log("Quiz submitted!");
+
+    const answers = {
+        q1: "Pacific Ocean",
+        q2: "Himalayas",
+        q3: "France",
+        q4: "Tokyo",
+        q5: "Africa",
+        q6: "Nile"
+    };
+
+    let score = 0;
+
+    for (let question in answers) {
+
+        const selected = document.querySelector(
+            `input[name="${question}"]:checked`
+        );
+
+        if (selected && selected.value === answers[question]) {
+            score++;
+        }
+    }
+
+    if (score >= 5) {
+        document.getElementById("result").textContent =
+            alert(`You scored ${score}/6. Good job!`);
+    } else {
+        document.getElementById("result").textContent =
+            alert(`You scored ${score}/6. Better luck next time!`);
+    }
+
+}
+
+</script>

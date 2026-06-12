@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+
+    <title>Gaming</title>
+    <link rel="stylesheet" href="quiz_css/quiz.css">
+</head>
+<body>
+	
+    <div class="topbar">	
+	</div>
+	
+	<div class="underbar">
+		<a href="index.html"><-- <span class="back">Back</span></a>
+	</div>
+	
+    <div class="topnav">
+        <p>Gaming <span class="whiz">Quiz</span></p>
+        <p id="intro">You are in the gaming quiz. Good luck!</p>
+		
+    </div>
+	
+	<div class = "questions">
+		
+		<!--Question 1-->
+		
+		<div class="questionDesign">
+			<h2><span class="whiz">Q1:</span>What company created Minecraft?</h2>
+				<label>
+					<input type="radio" name="q1" value="Epic Games">
+						<span class="whiz">a:</span>Epic Games
+				</label><br>
+		
+				<label>
+					<input type="radio" name="q1" value="Mojang">
+						<span class="whiz">b:</span>Mojang
+					</label><br>
+			
+				<label>
+					<input type="radio" name="q1" value="Roblox">	
+						<span class="whiz">c:</span>Roblox
+				</label><br><br>
+		</div>
+		
+		<!--Question 2-->
+		
+	<div class="questionDesign">
+		<h2><span class="whiz">Q2:</span>What is it called when you're the last one standing in Fortnite?</h2>
+		<label>
+			<input type="radio" name="q2" value="Win Royale">
+				<span class="whiz">a:</span>Win Royale
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q2" value="Victory">
+				<span class="whiz">b:</span>Victory
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q2" value="Victory Royale">	
+				<span class="whiz">c:</span>Victory Royale
+		</label><br><br>
+	</div>	
+		
+		<!--Question 3-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q3:</span>What console is made by Sony?</h2>
+		<label>
+			<input type="radio" name="q3" value="PlayStation">
+				<span class="whiz">a:</span>PlayStation
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q3" value="XBox">
+				<span class="whiz">b:</span>XBox
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q3" value="Nintendo Switch">	
+				<span class="whiz">c:</span>Nintendo Switch
+		</label><br><br>
+	</div>
+	
+		<!--Question 4-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q4:</span>What game features Mario?</h2>
+		<label>
+			<input type="radio" name="q4" value="Super Mario">
+				<span class="whiz">a:</span>Super Mario
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q4" value="Roblox">
+				<span class="whiz">b:</span>Roblox
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q4" value="Valorant">	
+				<span class="whiz">c:</span>Valorant
+		</label><br><br>
+	</div>	
+		
+		<!--Question 5-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q5:</span>What cis the currency in roblox called?</h2>
+		<label>
+			<input type="radio" name="q5" value="RoDollars">
+				<span class="whiz">a:</span>RoDollars
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q5" value="RoBucks">
+				<span class="whiz">b:</span>RoBucks
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q5" value="Robux">	
+				<span class="whiz">c:</span>Robux
+		</label><br><br>
+	</div>	
+		
+		<!--Question 6-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q6:</span>What Game is known for building with blocks and surviving monsters?</h2>
+		<label>
+			<input type="radio" name="q6" value="Minecraft">
+				<span class="whiz">a:</span>Minecraft
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q6" value="Animal Crossing">
+				<span class="whiz">b:</span>Animal Crossing
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q6" value="Craft & Mine">	
+				<span class="whiz">c:</span>Craft & Mine
+		</label><br><br>
+		
+		<button onclick="submitQuiz()">Submit Quiz</button>
+		
+		<p id="result"></p>
+	</div>			
+	</div>
+	
+	<script>
+function submitQuiz() {
+    console.log("Quiz submitted!");
+
+    const answers = {
+        q1: "Mojang",
+        q2: "Victory Royale",
+        q3: "PlayStation",
+        q4: "Super Mario",
+        q5: "Robux",
+        q6: "Minecraft"
+    };
+
+    let score = 0;
+
+    for (let question in answers) {
+
+        const selected = document.querySelector(
+            `input[name="${question}"]:checked`
+        );
+
+        if (selected && selected.value === answers[question]) {
+            score++;
+        }
+    }
+
+    if (score >= 5) {
+        document.getElementById("result").textContent =
+            alert(`You scored ${score}/6. Good job!`);
+    } else {
+        document.getElementById("result").textContent =
+            alert(`You scored ${score}/6. Better luck next time!`);
+    }
+
+}
+
+</script>

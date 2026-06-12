@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+
+    <title>QuizWhiz</title>
+    <link rel="stylesheet" href="quiz_css/quiz.css">
+</head>
+<body>
+	
+    <div class="topbar">
+		
+	</div>
+    <div class="topnav">
+        <p>Quiz<span class = "whiz">Whiz</span></p>
+        <p id="intro">Welcome To QuizWhiz! A Trivia game of multiple categories.</p>
+		<img src="quiz_photos/logo.png" alt="logo">
+    </div>
+	
+	<div class="mainContent">
+		<div class="sidebar">
+			<p><strong>Instructions:</strong></p>
+			<p><em>QuizWhiz</em> is an incredibly easy, fun and interractive website. To play, simply click which topic you'd like where you will then be asked multiple questions for you to answer to the best of your ability.
+				Good luck!</p>
+			<div class ="funFact">
+				<h1> Did you know?</h1>
+					<button id="loadFact">Load Fact</button>
+				<p id="fact">...</p>
+			</div>
+			<div id= "leaderboard">
+			<h3> Leaderboard: </h3>
+			<p> <strong>1. Ethan</strong> - 67 <br> 
+				<strong>2. Isaac </strong>- 63 <br>
+				<strong>3. Oliver</strong> - 59 <br> 
+				<strong>4. Stuart</strong> - 45 <br> 
+				<strong>5. Nathan </strong>- 40 <br> 
+				<strong>6. Liam </strong>- 39 <br>
+				<strong>7. Noah </strong>- 35  <br>
+				<strong>8. Mason</strong> - 25 <br>
+				<strong>9. Lucas </strong>- 22 <br>
+				<strong>10. Jacob </strong> - 20
+				</p>
+			</div>
+			
+			
+			
+		</div>
+			<div class="quizes">
+				<a href="quiz1.html"><img src="quiz_photos/quiz_1.jpg"></a>
+				<a href="quiz2.html"><img src="quiz_photos/quiz_2.jpg"></a>
+				<a href="quiz3.html"><img src="quiz_photos/quiz_3.jpg"></a>
+				<a href="quiz4.html"><img src="quiz_photos/quiz_4.jpg"></a>
+				<a href="quiz5.html"><img src="quiz_photos/quiz_5.jpg"></a>
+				<a href="quiz6.html"><img src="quiz_photos/quiz_6.jpg"></a>
+		</div>
+	</div>
+	
+	
+	
+	<script>
+    const btn = document.getElementById('loadFact');
+    const textElement = document.getElementById('fact');
+
+    const facts = [
+        "Octopuses have three hearts.",
+        "Australia is wider than the Moon.",
+        "Honey never spoils.",
+		"Your nose and ears never stop growing throughout your entire life.",
+		"A crocodile is physically unable to stick its tongue out.",
+		"Sea otters hold hands while sleeping so they don’t drift apart from each other."
+    ];
+
+    let currentFact = 0;
+
+    btn.addEventListener('click', () => {
+        textElement.textContent = facts[currentFact];
+        currentFact = (currentFact + 1) % facts.length;
+    });
+</script>
+
+	
+	
+
+	
+	
+</body>
+</html>
+
+
+	

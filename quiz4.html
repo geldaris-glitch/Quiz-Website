@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+
+    <title>Sports</title>
+    <link rel="stylesheet" href="quiz_css/quiz.css">
+</head>
+<body>
+	
+    <div class="topbar">	
+	</div>
+	
+	<div class="underbar">
+		<a href="index.html"><-- <span class="back">Back</span></a>
+	</div>
+	
+    <div class="topnav">
+        <p>Sports <span class="whiz">Quiz</span></p>
+        <p id="intro">You are in the sports quiz. Good luck!</p>
+		
+    </div>
+	
+	<div class = "questions">
+		<div class="questionDesign">
+			<h2><span class="whiz">Q1:</span>How many players are on the field in soccer?</h2>
+				<label>
+					<input type="radio" name="q1" value="11">
+						<span class="whiz">a:</span>11
+				</label><br>
+		
+				<label>
+					<input type="radio" name="q1" value="7">
+						<span class="whiz">b:</span>7
+					</label><br>
+			
+				<label>
+					<input type="radio" name="q1" value="15">	
+						<span class="whiz">c:</span>15
+				</label><br><br>
+		</div>
+		
+		<!--Question 2-->
+		
+	<div class="questionDesign">
+		<h2><span class="whiz">Q2:</span>What sport uses a bat and ball and is popular in Australia?</h2>
+		<label>
+			<input type="radio" name="q2" value="T-Ball">
+				<span class="whiz">a:</span>T-Ball
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q2" value="Cricket">
+				<span class="whiz">b:</span>Cricket
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q2" value="Baseball">	
+				<span class="whiz">c:</span>Baseball
+		</label><br><br>
+	</div>	
+		
+		<!--Question 3-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q3:</span>Where is the Australian Open held?</h2>
+		<label>
+			<input type="radio" name="q3" value="Australia">
+				<span class="whiz">a:</span>Australia
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q3" value="Japan">
+				<span class="whiz">b:</span>Japan
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q3" value="U.S.A">	
+				<span class="whiz">c:</span>U.S.A
+		</label><br><br>
+	</div>
+	
+		<!--Question 4-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q4:</span>What sport do you shoot a ball in a hoop?</h2>
+		<label>
+			<input type="radio" name="q4" value="Soccer">
+				<span class="whiz">a:</span>Soccer
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q4" value="Basketball">
+				<span class="whiz">b:</span>Basketball
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q4" value="Hoop Ball">	
+				<span class="whiz">c:</span>Hoop Ball
+		</label><br><br>
+	</div>	
+		
+		<!--Question 5-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q5:</span>What country invented soccer?</h2>
+		<label>
+			<input type="radio" name="q5" value="England">
+				<span class="whiz">a:</span>England
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q5" value="Brazil">
+				<span class="whiz">b:</span>Brazil
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q5" value="Australia">	
+				<span class="whiz">c:</span>Australia
+		</label><br><br>
+	</div>	
+		
+		<!--Question 6-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q6:</span>What sport is played at Wimbledon?</h2>
+		<label>
+			<input type="radio" name="q6" value="Tennis">
+				<span class="whiz">a:</span>Tennis
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q6" value="Badminton">
+				<span class="whiz">b:</span>Badminton
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q6" value="Ping Pong">	
+				<span class="whiz">c:</span>Ping Pong
+		</label><br><br>
+		
+		<button onclick="submitQuiz()">Submit Quiz</button>
+		
+		<p id="result"></p>
+	</div>			
+	</div>
+	
+	<script>
+function submitQuiz() {
+    console.log("Quiz submitted!");
+
+    const answers = {
+        q1: "11",
+        q2: "Cricket",
+        q3: "Australia",
+        q4: "Basketball",
+        q5: "England",
+        q6: "Tennis"
+    };
+
+    let score = 0;
+
+    for (let question in answers) {
+
+        const selected = document.querySelector(
+            `input[name="${question}"]:checked`
+        );
+
+        if (selected && selected.value === answers[question]) {
+            score++;
+        }
+    }
+
+    if (score >= 5) {
+        document.getElementById("result").textContent =
+            alert(`You scored ${score}/6. Good job!`);
+    } else {
+        document.getElementById("result").textContent =
+            alert(`You scored ${score}/6. Better luck next time!`);
+    }
+
+}
+
+</script>

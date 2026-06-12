@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+
+    <title>General Knowledge</title>
+    <link rel="stylesheet" href="quiz_css/quiz.css">
+</head>
+<body>
+	
+    <div class="topbar">	
+	</div>
+	
+	<div class="underbar">
+		<a href="index.html"><-- <span class="back">Back</span></a>
+	</div>
+	
+    <div class="topnav">
+        <p>General <span class="whiz">Knowledge</span></p>
+        <p id="intro">You are in the general knowledge quiz. Good luck!</p>
+		
+    </div>
+	
+	<div class = "questions">
+		<div class="questionDesign">
+			<h2><span class="whiz">Q1:</span>What is the capital of Australia?</h2>
+				<label>
+					<input type="radio" name="q1" value="Melbourne">
+						<span class="whiz">a:</span>Melbourne
+				</label><br>
+		
+				<label>
+					<input type="radio" name="q1" value="Canberra">
+						<span class="whiz">b:</span>Canberra
+					</label><br>
+			
+				<label>
+					<input type="radio" name="q1" value="Brisbane">	
+						<span class="whiz">c:</span>Brisbane
+				</label><br><br>
+		</div>
+		
+		<!--Question 2-->
+		
+	<div class="questionDesign">
+		<h2><span class="whiz">Q2:</span>How many continents are there?</h2>
+		<label>
+			<input type="radio" name="q2" value="5">
+				<span class="whiz">a:</span>5
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q2" value="6">
+				<span class="whiz">b:</span>6
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q2" value="7">	
+				<span class="whiz">c:</span>7
+		</label><br><br>
+	</div>	
+		
+		<!--Question 3-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q3:</span>What planet is known as the Red Planet?</h2>
+		<label>
+			<input type="radio" name="q3" value="Mars">
+				<span class="whiz">a:</span>Mars
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q3" value="Uranus">
+				<span class="whiz">b:</span>Uranus
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q3" value="Pluto">	
+				<span class="whiz">c:</span>Pluto
+		</label><br><br>
+	</div>
+	
+		<!--Question 4-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q4:</span>What is the largest animal?</h2>
+		<label>
+			<input type="radio" name="q4" value="Elephant">
+				<span class="whiz">a:</span>Elephant
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q4" value="Blue Whale">
+				<span class="whiz">b:</span>Blue Whale
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q4" value="Giraffe">	
+				<span class="whiz">c:</span>Giraffe
+		</label><br><br>
+	</div>	
+		
+		<!--Question 5-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q5:</span>What currency is used in the UK?</h2>
+		<label>
+			<input type="radio" name="q5" value="Yen">
+				<span class="whiz">a:</span>Yen
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q5" value="Dollars">
+				<span class="whiz">b:</span>Dollars
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q5" value="Pounds">	
+				<span class="whiz">c:</span>Pounds
+		</label><br><br>
+	</div>	
+		
+		<!--Question 6-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q6:</span>How many days are in a leap year?</h2>
+		<label>
+			<input type="radio" name="q6" value="365">
+				<span class="whiz">a:</span>365
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q6" value="366">
+				<span class="whiz">b:</span>366
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q6" value="364">	
+				<span class="whiz">c:</span>364
+		</label><br><br>
+		
+		<button onclick="submitQuiz()">Submit Quiz</button>
+		
+		<p id="result"></p>
+	</div>			
+	</div>
+	
+	<script>
+function submitQuiz() {
+    console.log("Quiz submitted!");
+
+    const answers = {
+        q1: "Canberra",
+        q2: "7",
+        q3: "Mars",
+        q4: "Blue Whale",
+        q5: "Pounds",
+        q6: "366"
+    };
+
+    let score = 0;
+
+    for (let question in answers) {
+
+        const selected = document.querySelector(
+            `input[name="${question}"]:checked`
+        );
+
+        if (selected && selected.value === answers[question]) {
+            score++;
+        }
+    }
+
+    if (score >= 5) {
+        document.getElementById("result").textContent =
+            alert(`You scored ${score}/6. Good job!`);
+    } else {
+        document.getElementById("result").textContent =
+            alert(`You scored ${score}/6. Better luck next time!`);
+    }
+
+}
+
+</script>
+
+			
+	
+	
+	
+	
+
+	
+	
+</body>
+</html>

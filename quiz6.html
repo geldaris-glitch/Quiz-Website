@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+
+    <title>Science</title>
+    <link rel="stylesheet" href="quiz_css/quiz.css">
+</head>
+<body>
+	
+    <div class="topbar">	
+	</div>
+	
+	<div class="underbar">
+		<a href="index.html"><-- <span class="back">Back</span></a>
+	</div>
+	
+    <div class="topnav">
+        <p>Science <span class="whiz">Quiz</span></p>
+        <p id="intro">You are in the Science quiz. Good luck!</p>
+		
+    </div>
+	
+	<div class = "questions">
+		<div class="questionDesign">
+			<h2><span class="whiz">Q1:</span>What gas do humans breath?</h2>
+				<label>
+					<input type="radio" name="q1" value="H2O">
+						<span class="whiz">a:</span>H2O
+				</label><br>
+		
+				<label>
+					<input type="radio" name="q1" value="Oxygen">
+						<span class="whiz">b:</span>Oxygen
+					</label><br>
+			
+				<label>
+					<input type="radio" name="q1" value="Hydrogen">	
+						<span class="whiz">c:</span>Hydrogen
+				</label><br><br>
+		</div>
+		
+		<!--Question 2-->
+		
+	<div class="questionDesign">
+		<h2><span class="whiz">Q2:</span>What part of the body pumps blood?</h2>
+		<label>
+			<input type="radio" name="q2" value="Lungs">
+				<span class="whiz">a:</span>Lungs
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q2" value="Foot">
+				<span class="whiz">b:</span>Foot
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q2" value="Heart">	
+				<span class="whiz">c:</span>Heart
+		</label><br><br>
+	</div>	
+		
+		<!--Question 3-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q3:</span>What is H20?</h2>
+		<label>
+			<input type="radio" name="q3" value="Water">
+				<span class="whiz">a:</span>Water
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q3" value="Fire">
+				<span class="whiz">b:</span>Fire
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q3" value="Air">	
+				<span class="whiz">c:</span>Air
+		</label><br><br>
+	</div>
+	
+		<!--Question 4-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q4:</span>What planet is closest to the sun?</h2>
+		<label>
+			<input type="radio" name="q4" value="Jupiter">
+				<span class="whiz">a:</span>Jupiter
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q4" value="Earth">
+				<span class="whiz">b:</span>Earth
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q4" value="Mercury">	
+				<span class="whiz">c:</span>Mercury
+		</label><br><br>
+	</div>	
+		
+		<!--Question 5-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q5:</span>What force keeps us on the ground?</h2>
+		<label>
+			<input type="radio" name="q5" value="Gravity">
+				<span class="whiz">a:</span>Gravity
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q5" value="The force">
+				<span class="whiz">b:</span>The force
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q5" value="ME">	
+				<span class="whiz">c:</span>ME
+		</label><br><br>
+	</div>	
+		
+		<!--Question 6-->
+		
+	<div class="questionDesign">	
+		<h2><span class="whiz">Q6:</span>What do plants use to make food?</h2>
+		<label>
+			<input type="radio" name="q6" value="Sunlight">
+				<span class="whiz">a:</span>Sunlight
+		</label><br>
+		
+		<label>
+			<input type="radio" name="q6" value="Water">
+				<span class="whiz">b:</span>Water
+			</label><br>
+			
+		<label>
+			<input type="radio" name="q6" value="Gravity">	
+				<span class="whiz">c:</span>Gravity
+		</label><br><br>
+		
+		<button onclick="submitQuiz()">Submit Quiz</button>
+		
+		<p id="result"></p>
+	</div>			
+	</div>
+	
+	<script>
+function submitQuiz() {
+    console.log("Quiz submitted!");
+
+    const answers = {
+        q1: "Oxygen",
+        q2: "Heart",
+        q3: "Water",
+        q4: "Mercury",
+        q5: "Gravity",
+        q6: "Sunlight"
+    };
+
+    let score = 0;
+
+    for (let question in answers) {
+
+        const selected = document.querySelector(
+            `input[name="${question}"]:checked`
+        );
+
+        if (selected && selected.value === answers[question]) {
+            score++;
+        }
+    }
+
+    if (score >= 5) {
+        document.getElementById("result").textContent =
+            alert(`You scored ${score}/6. Good job!`);
+    } else {
+        document.getElementById("result").textContent =
+            alert(`You scored ${score}/6. Better luck next time!`);
+    }
+
+}
+
+</script>
